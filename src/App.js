@@ -59,11 +59,15 @@ export default App;
 const ResaultComponent = styled.div`
   background: rgb(33,40,50);
   background: linear-gradient(177deg, rgba(33,40,50,1) 0%, rgba(23,28,36,1) 65%);
-  width: min(90%, 330px);
+  width: min(90%, 350px);
   padding: 3rem 1.5rem;
   border-radius: 15px;
   text-align: center;
   box-shadow: rgba(24, 24, 24, 0.35) 0px 5px 15px;
+
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
 
   h5 {
     background-color: var(--dark-blue);
@@ -96,10 +100,14 @@ const ResaultComponent = styled.div`
 const MainComponent = styled.div`
   background: rgb(33,40,50);
   background: linear-gradient(177deg, rgba(33,40,50,1) 0%, rgba(23,28,36,1) 65%);
-  width: min(90%, 330px);
+  width: min(90%, 350px);
   padding: 2rem 1.5rem;
   border-radius: 15px;
   box-shadow: rgba(24, 24, 24, 0.35) 0px 5px 15px;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
   
   img {
     background-color: #2c3540;
