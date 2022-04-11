@@ -2,10 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import './Reset.css';
 
+
 function App() {
+  // ================== State.
   const [ score, setScore ] = useState(null);
   const [ sendScore, setSendScore ] = useState(false);
 
+
+  // ================== Submit score.
   const submitScore = () => {
     if (score === null) {
       alert("You have to select a score first.");
@@ -14,9 +18,12 @@ function App() {
     }
   }
   
+
+
   return (
     <div className="App">
       {sendScore ? (
+        /* ================== Resault component ================== */
         <ResaultComponent>
           <img src="./images/illustration-thank-you.svg" alt="Thank you!" />
           <h5>You selected {score} out of 5</h5>
@@ -24,10 +31,12 @@ function App() {
           <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch</p>
         </ResaultComponent>
       ) : (
+        /* ================== Main component ================== */
         <MainComponent>
           <img src="./images/icon-star.svg" alt="Star" />
           <h1>How did we do?</h1>
           <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+          {/* ================== Buttons component ================== */}
           <ButtonsContainer>
             <button onClick={() => setScore(1)} className={score === 1 ? "selected" : null }>1</button>        
             <button onClick={() => setScore(2)} className={score === 2 ? "selected" : null }>2</button>        
@@ -46,6 +55,7 @@ export default App;
 
 
 
+/* ================== Resault component ================== */
 const ResaultComponent = styled.div`
   background: rgb(33,40,50);
   background: linear-gradient(177deg, rgba(33,40,50,1) 0%, rgba(23,28,36,1) 65%);
@@ -82,6 +92,7 @@ const ResaultComponent = styled.div`
 
 
 
+/* ================== Main component ================== */
 const MainComponent = styled.div`
   background: rgb(33,40,50);
   background: linear-gradient(177deg, rgba(33,40,50,1) 0%, rgba(23,28,36,1) 65%);
@@ -133,6 +144,7 @@ const MainComponent = styled.div`
 
 
 
+/* ================== Buttons component ================== */
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
